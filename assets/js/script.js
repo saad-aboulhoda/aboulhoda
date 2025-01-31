@@ -1,9 +1,15 @@
-addEventListener("scroll", () => {
+function checkScrollForHeader() {
   if (window.scrollY > 50) {
     document.querySelector("header").classList.add("active");
   } else {
     document.querySelector("header").classList.remove("active");
   }
+}
+
+checkScrollForHeader();
+
+addEventListener("scroll", () => {
+  checkScrollForHeader();
 });
 
 document.querySelectorAll("[toggle-target]").forEach((element) => {
