@@ -78,7 +78,7 @@ function renderProjects(projectsArray) {
     .map(
       (project) => `
     <div class="card">
-      <div class="card-img${project.moreDetailsTarget ? " more-details" : ""}" 
+      <div class="${project.moreDetailsTarget ? "more-details" : ""}" 
            ${
              project.moreDetailsTarget
                ? `more-details-target="${project.moreDetailsTarget}"`
@@ -160,7 +160,7 @@ function renderDetails(detail) {
             ${detail.links
               .map(
                 (link) => `
-              <a href="${link.link}">
+              <a target="_blank" href="${link.link}">
                 <i class="${link.icon}"></i> ${link.text}
               </a>
             `
