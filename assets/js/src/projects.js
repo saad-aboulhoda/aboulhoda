@@ -147,7 +147,11 @@ function renderDetails(detail) {
               .map(
                 (tech) => `
               <div class="tech">
-                <i class="${tech.icon}"></i> ${tech.text}
+                <i class="${
+                  tech.icon === "" ? "fa-solid fa-tag" : tech.icon
+                }" ${tech.icon === "" ? 'style="color: #e83538"' : ""}></i> ${
+                  tech.text
+                }
               </div>
             `
               )

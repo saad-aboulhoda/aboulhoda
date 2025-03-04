@@ -1091,3 +1091,91 @@ div#messagesContainer .message.slide-out {
 }
 
 /* Project Details: End */
+
+/* MVVM Architecture Icon */
+.custom-icons.mvvm-icon {
+  position: relative;
+  display: inline-block;
+  width: 19px;
+  height: 19px;
+  background-color: #3498db;
+  border-radius: 3px;
+  overflow: hidden;
+  vertical-align: middle; /* Aligns the icon with surrounding text */
+  margin: 0 2px; /* Optional: adds a small space on either side */
+  line-height: normal; /* Ensures consistent alignment */
+}
+
+.custom-icons.mvvm-icon::before {
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 13px;
+  height: 13px;
+  border: 1px solid white;
+  border-radius: 1px;
+  box-sizing: border-box;
+}
+
+.custom-icons.mvvm-icon::after {
+  content: "";
+  position: absolute;
+  top: 6px;
+  left: 6px;
+  width: 7px;
+  height: 7px;
+  background-color: white;
+  clip-path: polygon(0% 0%, 100% 0%, 100% 40%, 60% 40%, 60% 100%, 0% 100%);
+}
+
+/* Hilt Android Dependency Injection Icon */
+.custom-icons.hilt-icon {
+  position: relative;
+  display: inline-block;
+  width: 19px;
+  height: 19px;
+  background-color: #3ddc84; /* Android green color */
+  border-radius: 3px;
+  overflow: hidden;
+  vertical-align: middle;
+  margin: 0 2px;
+  line-height: normal;
+}
+
+/* Android robot head shape (simplified) */
+.custom-icons.hilt-icon::before {
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: 4px;
+  width: 11px;
+  height: 6px;
+  background-color: white;
+  border-radius: 5px 5px 0 0;
+}
+
+/* Android robot body + injection syringe */
+.custom-icons.hilt-icon::after {
+  content: "";
+  position: absolute;
+  top: 9px;
+  left: 4px;
+  width: 6px;
+  height: 7px;
+  background-color: white;
+  border-radius: 0 0 3px 3px;
+  box-shadow: 7px -3px 0 -2px white, /* Syringe body */ 12px -3px 0 -3px white; /* Syringe tip */
+}
+
+/* Small detail for syringe plunger */
+.custom-icons.hilt-icon > i {
+  content: "";
+  position: absolute;
+  right: 3px;
+  top: 6px;
+  width: 2px;
+  height: 2px;
+  background-color: white;
+  border-radius: 1px;
+}
