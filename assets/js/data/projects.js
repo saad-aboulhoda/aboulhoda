@@ -128,7 +128,13 @@ export const projects = [
       { icon: "devicon-mysql-original colored", text: "MySQL" },
       { icon: "fa-solid fa-mobile", text: "Responsive" },
     ],
-    links: [],
+    links: [
+      {
+        icon: "fa-brands fa-github",
+        text: "Github",
+        link: "https://github.com/saad-aboulhoda/edusync-student-android-app",
+      },
+    ],
   },
   {
     title: "EduSync Student - Native Android Application",
@@ -198,7 +204,7 @@ export const projects = [
     shortTitle: "Games Store",
     description:
       "This mobile application was built using the Android SDK, allowing players to purchase their favorite games effortlessly. It features a clean and simple UI, ensuring a seamless user experience.",
-    date: "Game Store | Feb 2025",
+    date: "Game Store | Dec 2023",
     imgs: [
       "/assets/images/projects/games-store-android/Games Store - Mobile.webp",
       "/assets/images/projects/games-store-android/1.webp",
