@@ -159,13 +159,7 @@ export const projects = [
       { icon: "", text: "Hilt (DI)" },
       { icon: "fa-solid fa-language", text: "Multi Language" },
     ],
-    links: [
-      {
-        icon: "fa-solid fa-globe",
-        text: "Demo",
-        link: "https://games.aboulhoda.me",
-      },
-    ],
+    links: [],
   },
   {
     title: "Games Store - Admin Dashboard",
