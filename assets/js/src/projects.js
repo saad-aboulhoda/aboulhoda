@@ -1,5 +1,6 @@
 import { select, selectAll } from "../utils.js";
 import { projects as data } from "../data/projects.js";
+import { createObservable } from "../functions/createObservable.js";
 
 export function projects() {
   select("#projects .cards-wrapper").innerHTML = renderProjects(data);
@@ -19,33 +20,53 @@ export function projects() {
       const elementTarget = select(".project-details");
       elementTarget.classList.add("active");
       /**
+       * Next & Prev Buttons
+       */
+      let currentIndex = 0;
+      const image = select(".images-wrapper img");
+      const imageObservable = createObservable();
+      const unsubscribeImage = imageObservable.subscribe((index) => {
+        // Remove active from all dots
+        selectAll("#dots span").forEach((element) =>
+          element.classList.remove("active")
+        );
+        // then
+        select(`#dot-${currentIndex}`).classList.add("active");
+
+        image.src = project.imgs[index];
+      });
+
+      select("#slider-prev").addEventListener("click", () => {
+        if (currentIndex === 0) {
+          currentIndex = project.imgs.length - 1;
+        } else {
+          currentIndex -= 1;
+        }
+        imageObservable.broadcast(currentIndex);
+      });
+
+      select("#slider-next").addEventListener("click", () => {
+        if (currentIndex === project.imgs.length - 1) {
+          currentIndex = 0;
+        } else {
+          currentIndex += 1;
+        }
+        imageObservable.broadcast(currentIndex);
+      });
+      /**
        * Close Button
        */
       select(".project-details .content .close").addEventListener(
         "click",
         () => {
+          unsubscribeImage();
           elementTarget.classList.remove("active");
         }
       );
       /**
-       * Next & Prev Buttons
-       */
-      const slider = select("#slider");
-      select("#slider-prev").addEventListener("click", () => {
-        const sliderWidth = slider.offsetWidth;
-        slider.scrollLeft -= sliderWidth;
-      });
-
-      select("#slider-next").addEventListener("click", () => {
-        const sliderWidth = slider.offsetWidth;
-        slider.scrollLeft += sliderWidth;
-      });
-      /**
        * Expand & Minimize Buttons
        */
       select("#expand").addEventListener("click", () => {
-        // this is important for fix a problem, when expand is activated
-        slider.scrollLeft = 0;
         // Change close button to white
         select(".project-details .container .content .close").style.color =
           "white";
@@ -56,18 +77,12 @@ export function projects() {
         select("#minimize").classList.toggle("active");
       });
       select("#minimize").addEventListener("click", () => {
-        slider.scrollLeft = 0;
         select(".project-details .container .content .close").style.color = "";
         select(
           ".project-details .container .content .details .images-wrapper"
         ).classList.remove("expand");
         select("#expand").classList.toggle("active");
         select("#minimize").classList.toggle("active");
-      });
-
-      select("#slider-next").addEventListener("click", () => {
-        const sliderWidth = slider.offsetWidth;
-        slider.scrollLeft += sliderWidth;
       });
     });
   });
@@ -110,19 +125,20 @@ function renderDetails(detail) {
       </div>
       <div class="details">
         <div class="images-wrapper">
-          <ul id="slider" class="hide-scroll">
+          <img  src="${detail.imgs[0]}" />
+          <div id="expand">
+            <i class="fa-solid fa-expand"></i>
+          </div>
+          <div id="dots">
             ${detail.imgs
               .map(
-                (img) => `
-              <li>
-                <img src="${img}" />
-              </li>
+                (_, index) => `
+              <span id="dot-${index}" ${
+                  index == 0 ? `class="active"` : ""
+                }></span>
             `
               )
               .join("")}
-          </ul>
-          <div id="expand">
-            <i class="fa-solid fa-expand"></i>
           </div>
           <div id="minimize" class="active">
             <i class="fa-solid fa-minimize"></i>
@@ -158,7 +174,7 @@ function renderDetails(detail) {
               .join("")}
           </div>
           <div class="my-2"></div>
-          <h4>Links</h4>
+          <h4 class="${detail.links.length > 0 ? "" : "hidden"}"">Links</h4>
           <div class="my-2"></div>
           <div class="link">
             ${detail.links
