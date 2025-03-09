@@ -62,7 +62,7 @@ export function projects() {
 
           stopImageLoading();
 
-          //unBlockNavigatingBetweenImages();
+          unBlockNavigatingBetweenImages();
 
           image.removeEventListener("load", onLoadedImage);
         };
