@@ -1,11 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <!-- Metadata -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Hey, this is my porfolio, here you can see all my personal projects, and feel free to contact us if you want some help in a project."
+    />
+    <meta
+      name="keywords"
+      content="Web, Web Development, Mobile Development, Software Developer, Front-End Developer, Back-End Developer"
+    />
     <title>ABOULHODA</title>
+    <!-- Preload hero background image -->
+    <link
+      rel="preload"
+      as="image"
+      href="/assets/images/hero-section-background.webp"
+    />
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <link rel="icon" type="image/x-icon" href="favicon.ico?" />
     <!-- FontAwesome Style -->
     <link
       rel="stylesheet"
@@ -20,12 +35,8 @@
       type="text/css"
       href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"
     />
-    <!-- Main Style -->
-    <link rel="stylesheet" href="./assets/css/style.css" />
-    <!-- Utilities Style -->
-    <link rel="stylesheet" href="./assets/css/utilities.css" />
-    <!-- Main Script -->
-    <script defer src="./assets/js/script.js"></script>
+    <!-- index.js -->
+    <script type="module" src="./src/main.js"></script>
   </head>
 
   <body>
@@ -104,7 +115,7 @@
           </div>
           <div class="skills-wrapper">
             <article>
-              <h4 class="article-title">My Skills</h4>
+              <h4 class="article-title">Technologies I'm familiar with</h4>
               <ul class="skills">
                 <li class="tooltip" tooltip="Java">
                   <i class="devicon-java-plain-wordmark colored"></i>
@@ -197,71 +208,21 @@
       <!-- Projects Section: Start -->
       <section id="projects">
         <h3 class="section-title">Projects</h3>
-        <div class="container cards-wrapper">
-          <div class="card">
-            <div class="card-img">
-              <img src="/assets/images/projects/ABOULHODA.png" />
-            </div>
-            <div class="card-body">
-              <h4 class="card-title">ABOULHODA</h4>
-              <div class="card-description line line-clamp-2">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Architecto illo tenetur commodi hic odio qui voluptatum minima,
-                aliquid nulla quidem. Eius illum non natus pariatur. Provident
-                molestias voluptatum quo ratione.
-              </div>
-              <div class="badges-wrapper">
-                <div class="badge">HTML</div>
-                <div class="badge">CSS</div>
-                <div class="badge">JavaScript</div>
-                <div class="badge">2025</div>
-              </div>
-            </div>
-          </div>
-          <div class="card">
-            <div class="card-img">
-              <img src="/assets/images/projects/Doros Online.png" />
-            </div>
-            <div class="card-body">
-              <h4 class="card-title">Doros Online</h4>
-              <div class="card-description line line-clamp-2">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Architecto illo tenetur commodi hic odio qui voluptatum minima,
-                aliquid nulla quidem. Eius illum non natus pariatur. Provident
-                molestias voluptatum quo ratione.
-              </div>
-              <div class="badges-wrapper">
-                <div class="badge">HTML</div>
-                <div class="badge">CSS</div>
-                <div class="badge">Bootstrap</div>
-                <div class="badge">Wordpress</div>
-                <div class="badge">Themosis</div>
-              </div>
-            </div>
-          </div>
-          <div class="card">
-            <div class="card-img">
-              <img src="/assets/images/projects/Nexus.jpg" />
-            </div>
-            <div class="card-body">
-              <h4 class="card-title">Nexus</h4>
-              <div class="card-description line line-clamp-2">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Architecto illo tenetur commodi hic odio qui voluptatum minima,
-                aliquid nulla quidem. Eius illum non natus pariatur. Provident
-                molestias voluptatum quo ratione.
-              </div>
-              <div class="badges-wrapper">
-                <div class="badge">Angular</div>
-                <div class="badge">Node.js</div>
-                <div class="badge">Nest.js</div>
-                <div class="badge">Appwrite</div>
-              </div>
-            </div>
-          </div>
-        </div>
+        <div class="container cards-wrapper"></div>
+        <p class="stay-tunned">
+          I still have projects that I will add later, so please stay tuned.
+        </p>
       </section>
       <!-- Projects Section: End -->
+
+      <!-- Project Details: Start -->
+
+      <div class="project-details">
+        <div class="overlay"></div>
+        <div class="container"></div>
+      </div>
+
+      <!-- Project Details: End -->
 
       <!-- Contact Section: Start -->
 
@@ -332,7 +293,6 @@
           </div>
         </div>
       </section>
-
       <!-- Contact Section: End -->
     </main>
 
@@ -348,7 +308,7 @@
             <a
               class="icon-wrapper"
               target="_blank"
-              href="https://github.com/n1akai"
+              href="https://github.com/saad-aboulhoda"
               ><img src="/assets/images/icons/github.svg"
             /></a>
           </p>
