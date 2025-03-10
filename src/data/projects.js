@@ -132,7 +132,7 @@ export const projects = [
       {
         icon: "fa-brands fa-github",
         text: "Github",
-        link: "https://github.com/saad-aboulhoda/edusync-student-android-app",
+        link: "https://github.com/saad-aboulhoda/sales-management-system",
       },
     ],
   },
@@ -165,7 +165,13 @@ export const projects = [
       { icon: "", text: "Hilt (DI)" },
       { icon: "fa-solid fa-language", text: "Multi Language" },
     ],
-    links: [],
+    links: [
+      {
+        icon: "fa-brands fa-github",
+        text: "Github",
+        link: "https://github.com/saad-aboulhoda/edusync-student-android-app",
+      },
+    ],
   },
   {
     title: "Games Store - Admin Dashboard",
